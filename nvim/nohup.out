@@ -1,0 +1,100 @@
+[Child 58368, MediaDecoderStateMachine #1] WARNING: Decoder=7ffb1f1da800 state=DECODING_METADATA Decode metadata failed, shutting down decoder: file ./dom/media/MediaDecoderStateMachine.cpp:372
+[Child 58368, MediaDecoderStateMachine #1] WARNING: Decoder=7ffb1f1da800 Decode error: NS_ERROR_DOM_MEDIA_METADATA_ERR (0x806e0006) - static mozilla::MP4Metadata::ResultAndByteBuffer mozilla::MP4Metadata::Metadata(mozilla::ByteStream*): Cannot parse metadata: file ./dom/media/MediaDecoderStateMachineBase.cpp:164
+09:48:23.731 › State version: 12
+09:48:23.733 › Migrator Nu (to version 2) should migrate: false - up
+09:48:23.734 › Migrator Su (to version 3) should migrate: false - up
+09:48:23.734 › Migrator Au (to version 4) should migrate: false - up
+09:48:23.734 › Migrator _u (to version 5) should migrate: false - up
+09:48:23.734 › Migrator Ou (to version 6) should migrate: false - up
+09:48:23.734 › Migrator ku (to version 7) should migrate: false - up
+09:48:23.735 › Migrator Pu (to version 8) should migrate: false - up
+09:48:23.735 › Migrator Du (to version 9) should migrate: false - up
+09:48:23.735 › Migrator du (to version 10) should migrate: false - up
+09:48:23.735 › Migrator gu (to version 11) should migrate: false - up
+09:48:23.736 › Migrator wu (to version 12) should migrate: false - up
+09:48:23.756 › Error: No password found
+09:48:23.780 › Error: No password found
+09:48:23.789 › Error: No password found
+09:48:23.824 › Error: No password found
+09:48:23.824 › Error: No password found
+09:48:23.845 › Error: No password found
+09:48:23.857 › Error: No password found
+09:48:24.295 › Error: No password found
+09:48:24.445 › Error: No password found
+09:48:24.482 › Error: No password found
+09:48:24.534 › Error: No password found
+09:48:24.535 › Error: No password found
+(node:73204) UnhandledPromiseRejectionWarning: TypeError: Cannot read properties of undefined (reading 'setContextMenu')
+    at TrayMain.updateContextMenu (/tmp/.mount_BitwarcVMszw/resources/app.asar/main.js:48441:23)
+    at MessagingMain.updateTrayMenu (/tmp/.mount_BitwarcVMszw/resources/app.asar/main.js:47941:28)
+    at MessagingMain.onMessage (/tmp/.mount_BitwarcVMszw/resources/app.asar/main.js:47867:22)
+    at MessagingMain.<anonymous> (/tmp/.mount_BitwarcVMszw/resources/app.asar/main.js:47858:151)
+    at Generator.next (<anonymous>)
+    at /tmp/.mount_BitwarcVMszw/resources/app.asar/main.js:47837:71
+    at new Promise (<anonymous>)
+    at messaging_main_awaiter (/tmp/.mount_BitwarcVMszw/resources/app.asar/main.js:47833:12)
+    at IpcMainImpl.<anonymous> (/tmp/.mount_BitwarcVMszw/resources/app.asar/main.js:47858:79)
+    at IpcMainImpl.emit (node:events:517:28)
+(Use `bitwarden --trace-warnings ...` to show where the warning was created)
+(node:73204) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 1)
+09:48:24.689 › Error: No password found
+09:48:24.812 › Error: No password found
+(node:73204) UnhandledPromiseRejectionWarning: TypeError: Cannot read properties of undefined (reading 'setContextMenu')
+    at TrayMain.updateContextMenu (/tmp/.mount_BitwarcVMszw/resources/app.asar/main.js:48441:23)
+    at MessagingMain.updateTrayMenu (/tmp/.mount_BitwarcVMszw/resources/app.asar/main.js:47941:28)
+    at MessagingMain.onMessage (/tmp/.mount_BitwarcVMszw/resources/app.asar/main.js:47867:22)
+    at MessagingMain.<anonymous> (/tmp/.mount_BitwarcVMszw/resources/app.asar/main.js:47858:151)
+    at Generator.next (<anonymous>)
+    at /tmp/.mount_BitwarcVMszw/resources/app.asar/main.js:47837:71
+    at new Promise (<anonymous>)
+    at messaging_main_awaiter (/tmp/.mount_BitwarcVMszw/resources/app.asar/main.js:47833:12)
+    at IpcMainImpl.<anonymous> (/tmp/.mount_BitwarcVMszw/resources/app.asar/main.js:47858:79)
+    at IpcMainImpl.emit (node:events:517:28)
+(node:73204) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 2)
+09:48:26.802 › Error: No password found
+09:48:28.133 › Checking for update
+09:48:28.586 › Update for version 2024.2.0 is not available (latest version: 2024.2.0, downgrade is disallowed).
+(node:73204) UnhandledPromiseRejectionWarning: TypeError: Cannot read properties of undefined (reading 'setContextMenu')
+    at TrayMain.updateContextMenu (/tmp/.mount_BitwarcVMszw/resources/app.asar/main.js:48441:23)
+    at MessagingMain.updateTrayMenu (/tmp/.mount_BitwarcVMszw/resources/app.asar/main.js:47941:28)
+    at MessagingMain.onMessage (/tmp/.mount_BitwarcVMszw/resources/app.asar/main.js:47867:22)
+    at MessagingMain.<anonymous> (/tmp/.mount_BitwarcVMszw/resources/app.asar/main.js:47858:151)
+    at Generator.next (<anonymous>)
+    at /tmp/.mount_BitwarcVMszw/resources/app.asar/main.js:47837:71
+    at new Promise (<anonymous>)
+    at messaging_main_awaiter (/tmp/.mount_BitwarcVMszw/resources/app.asar/main.js:47833:12)
+    at IpcMainImpl.<anonymous> (/tmp/.mount_BitwarcVMszw/resources/app.asar/main.js:47858:79)
+    at IpcMainImpl.emit (node:events:517:28)
+(node:73204) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 3)
+09:48:33.110 › Finished search indexing
+Warning: loader_scanned_icd_add: Could not get 'vkCreateInstance' via 'vk_icdGetInstanceProcAddr' for ICD libGLX_nvidia.so.0
+Warning: loader_get_json: Failed to open JSON file intel_hasvk_icd.x86_64.json
+Warning: loader_get_json: Failed to open JSON file intel_icd.i686.json
+Warning: loader_get_json: Failed to open JSON file lvp_icd.x86_64.json
+Warning: /usr/lib/x86_64-linux-gnu/libvulkan_radeon.so: cannot open shared object file: Permission denied
+Warning: loader_icd_scan: Failed loading library associated with ICD JSON /usr/lib/x86_64-linux-gnu/libvulkan_radeon.so. Ignoring this JSON
+Warning: /usr/lib/x86_64-linux-gnu/libvulkan_intel.so: cannot open shared object file: Permission denied
+Warning: loader_icd_scan: Failed loading library associated with ICD JSON /usr/lib/x86_64-linux-gnu/libvulkan_intel.so. Ignoring this JSON
+Warning: loader_get_json: Failed to open JSON file lvp_icd.i686.json
+Warning: loader_get_json: Failed to open JSON file intel_hasvk_icd.i686.json
+Warning: loader_get_json: Failed to open JSON file radeon_icd.i686.json
+Warning: vkCreateInstance: Found no drivers!
+Warning: vkCreateInstance failed with VK_ERROR_INCOMPATIBLE_DRIVER
+    at CheckVkSuccessImpl (../../third_party/dawn/src/dawn/native/vulkan/VulkanError.cpp:101)
+    at CreateVkInstance (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:493)
+    at Initialize (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:379)
+    at Create (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:301)
+    at operator() (../../third_party/dawn/src/dawn/native/vulkan/BackendVk.cpp:556)
+
+09:50:51.976 › Finished search indexing
+10:07:55.016 › TypeError: Object has been destroyed
+    at WindowMain.<anonymous> (/tmp/.mount_BitwarcVMszw/resources/app.asar/main.js:48863:36)
+    at Generator.next (<anonymous>)
+    at /tmp/.mount_BitwarcVMszw/resources/app.asar/main.js:48631:71
+    at new Promise (<anonymous>)
+    at window_main_awaiter (/tmp/.mount_BitwarcVMszw/resources/app.asar/main.js:48627:12)
+    at WindowMain.updateWindowState (/tmp/.mount_BitwarcVMszw/resources/app.asar/main.js:48858:16)
+    at WindowMain.<anonymous> (/tmp/.mount_BitwarcVMszw/resources/app.asar/main.js:48792:28)
+    at Generator.next (<anonymous>)
+    at /tmp/.mount_BitwarcVMszw/resources/app.asar/main.js:48631:71
+    at new Promise (<anonymous>)
