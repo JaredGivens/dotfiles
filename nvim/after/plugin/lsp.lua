@@ -22,7 +22,15 @@ cmp.setup({
 local omnisharpd = os.getenv("OMNISHARP_DIR")
 if omnisharpd ~= nil then
   require('lspconfig').omnisharp.setup {
-    cmd = { "dotnet", omnisharpd .. "/OmniSharp.dll" }
+    cmd = { "dotnet", omnisharpd .. "/OmniSharp.dll" },
+    FormattingOptions = {
+      -- Enables support for reading code style, naming convention and analyzer
+      -- settings from .editorconfig.
+      EnableEditorConfigSupport = true,
+      -- Specifies whether 'using' directives should be grouped and sorted during
+      -- document formatting.
+      OrganizeImports = true,
+    },
   }
 end
 lsp_zero.setup_servers(

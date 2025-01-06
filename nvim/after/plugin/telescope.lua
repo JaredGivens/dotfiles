@@ -3,6 +3,7 @@ vim.keymap.set('n', '<leader>ff', function()
   builtin.find_files({
     hidden = true,
     file_ignore_patterns = {
+      "%.venv/",
       "%.git/",
       "%.cache/",
       "%third_party/",
