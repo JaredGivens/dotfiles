@@ -14,6 +14,8 @@ vim.opt.rtp:prepend(lazypath)
 
 -- install plugins
 require('lazy').setup({
+  --glsl syntax
+  'tikhomirov/vim-glsl',
   'nvim-treesitter/nvim-treesitter',
   -- git integration
   {

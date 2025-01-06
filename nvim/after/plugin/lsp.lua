@@ -25,10 +25,12 @@ if omnisharpd ~= nil then
     cmd = { "dotnet", omnisharpd .. "/OmniSharp.dll" }
   }
 end
-lsp_zero.setup_servers({
-  'jdtls', 'lua_ls', 'rust_analyzer', 'clangd',
-  'gdshader_lsp', 'glsl_analyzer', 'pyright'
-})
+lsp_zero.setup_servers(
+  {
+    'jdtls', 'lua_ls', 'rust_analyzer',
+    'clangd', 'gdshader_lsp', 'glsl_analyzer', 'pyright'
+  }
+)
 
 lsp_zero.new_client({
   name = 'deno_lsp',
