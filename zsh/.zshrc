@@ -28,6 +28,7 @@ bindkey -v
 export KEYTIMEOUT=1
 
 # prompt
+alias ls='ls --color=auto'
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' unstagedstr '%F{red}*%f'
@@ -69,6 +70,7 @@ export CMAKE_PREFIX_PATH="/Users/jaredgivens/Library/cmake:$CMAKE_PREFIX_PATH"
 export PROTOC="/usr/local/bin/protoc"
 export PROTOC_INCLUDE="/usr/local/include"
 export ZDOTDIR="$HOME/.config/zsh"
+
 
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
