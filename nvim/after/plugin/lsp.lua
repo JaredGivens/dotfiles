@@ -19,10 +19,10 @@ cmp.setup({
   },
 })
 
-local omnisharpd = os.getenv("OMNISHARP_DIR")
+local omnisharpd = os.getenv('OMNISHARP_DIR')
 if omnisharpd ~= nil then
   require('lspconfig').omnisharp.setup {
-    cmd = { "dotnet", omnisharpd .. "/OmniSharp.dll" },
+    cmd = { 'dotnet', omnisharpd .. '/OmniSharp.dll' },
     FormattingOptions = {
       -- Enables support for reading code style, naming convention and analyzer
       -- settings from .editorconfig.
@@ -33,10 +33,16 @@ if omnisharpd ~= nil then
     },
   }
 end
+require('lspconfig').clangd.setup {
+  cmd = {
+    'clangd',
+  }
+}
+
 lsp_zero.setup_servers(
   {
-    'jdtls', 'lua_ls', 'rust_analyzer',
-    'clangd', 'gdshader_lsp', 'glsl_analyzer', 'pyright'
+    'jdtls', 'lua_ls', 'rust_analyzer', 'kotlin_language_server',
+    'gdshader_lsp', 'glsl_analyzer', 'pyright'
   }
 )
 

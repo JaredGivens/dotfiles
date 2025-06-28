@@ -45,6 +45,8 @@ source "$ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
 export EDITOR=nvim
 export CMAKE_GENERATOR=Ninja
+alias cmake='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
+
 
 export PATH="$PATH:$HOME/.local/bin"
 export PATH="$PATH:/Library/Frameworks/Python.framework/Versions/3.9/bin"
@@ -69,7 +71,6 @@ export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/usr/local/Cellar/imagemagick/7.1.1
 export CMAKE_PREFIX_PATH="/Users/jaredgivens/Library/cmake:$CMAKE_PREFIX_PATH"
 export PROTOC="/usr/local/bin/protoc"
 export PROTOC_INCLUDE="/usr/local/include"
-export ZDOTDIR="$HOME/.config/zsh"
 
 
 eval "$(pyenv init -)"
