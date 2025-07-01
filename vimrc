@@ -82,27 +82,34 @@ set shiftwidth=2
 set softtabstop=2
 set listchars=tab:>-,trail:-,space:.
 
-hi NonText ctermfg=0
-hi ColorColumn cterm=None ctermbg=0
-hi String ctermfg=10
-hi Identifier ctermfg=14
-hi Function ctermfg=15
-hi Type ctermfg=4
-hi PreProc ctermfg=13
-hi LspErrorHighlight cterm=underline ctermul=1
-hi LspWarningHighlight cterm=underline ctermfg=3
-hi LspInformationHighlight ctermfg=6
-hi LspErrorText ctermbg=None ctermfg=1
-hi LspWarningText ctermbg=None ctermfg=3
-hi GitGutterAdd cterm=bold ctermfg=2 ctermbg=None guibg=Grey
-hi GitGutterChange cterm=bold ctermfg=3 ctermbg=None guibg=Grey
-hi GitGutterDelete cterm=bold ctermfg=1 ctermbg=None  guifg=Blue guibg=Grey
-hi SignColumn ctermbg=NONE
-hi Constant ctermfg=13
-hi PreProc ctermfg=13
-hi LineNr ctermfg=6
-hi Statement ctermfg=11
-hi Comment ctermfg=6
-hi Special ctermfg=None
-hi SpecialKey ctermfg=0
+hi NonText                       ctermfg=0
+hi ColorColumn                   cterm=None ctermbg=0
+hi String                        ctermfg=10
+hi Identifier                    ctermfg=14
+hi Function                      ctermfg=15
+hi Type                          ctermfg=4
+hi PreProc                       ctermfg=13
+hi LspErrorHighlight             cterm=underline ctermul=1
+hi LspWarningHighlight           cterm=underline ctermfg=3
+hi LspInformationHighlight       ctermfg=6
+hi LspErrorText                  ctermbg=None ctermfg=1
+hi LspWarningText                ctermbg=None ctermfg=3
+hi GitGutterAdd                  cterm=bold ctermfg=2 ctermbg=None guibg=Grey
+hi GitGutterChange               cterm=bold ctermfg=3 ctermbg=None guibg=Grey
+hi GitGutterDelete               cterm=bold ctermfg=1 ctermbg=None  guifg=Blue guibg=Grey
+hi SignColumn                    ctermbg=None
+hi Constant                      ctermfg=13
+hi PreProc                       ctermfg=13
+hi LineNr                        ctermfg=6
+hi Statement                     ctermfg=11
+hi Comment                       ctermfg=6
+hi Special                       ctermfg=None
+hi SpecialKey                    ctermfg=0
+hi Search                        ctermbg=3
+hi Visual                        ctermbg=8 ctermfg=None
+hi FoldedColumn                  ctermfg=12 ctermbg=8
+hi Folded                        ctermfg=12 ctermbg=8
+hi DiffAdd                       cterm=bold ctermfg=2 ctermbg=None
+hi DiffChange                    cterm=bold ctermfg=3 ctermbg=None
+hi DiffDelete                    cterm=bold ctermfg=1 ctermbg=None
 hi Pmenu None
