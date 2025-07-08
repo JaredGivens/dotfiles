@@ -36,12 +36,14 @@ nnoremap <leader>fg :GFiles?<CR>
 nnoremap <leader>fb :Buffers<CR>
 nnoremap <leader>fh :History<CR>
 nnoremap <leader>rg :Rg<CR>
+inoremap <expr> <c-x><c-f> fzf#vim#complete#path('fd')
+inoremap <expr> <c-x><c-f> fzf#vim#complete#path('rg --files')
 
 " LSP settings
 function! s:on_lsp_buffer_enabled() abort
-    let g:lsp_diagnostics_virtual_text_enabled = 0
     setlocal omnifunc=lsp#complete
     setlocal signcolumn=yes
+    nnoremap <leader>rg :Rg<CR>
     nmap <buffer> gd <plug>(lsp-definition)
     nmap <buffer> gr <plug>(lsp-references)
     nmap <buffer> gi <plug>(lsp-implementation)
@@ -50,6 +52,10 @@ function! s:on_lsp_buffer_enabled() abort
     nmap <buffer> gj <plug>(lsp-next-diagnostic)
     nmap <buffer> gk <plug>(lsp-previous-diagnostic)
     nmap <buffer> K <plug>(lsp-hover)
+    nnoremap <buffer> gl <plug>(lsp-document-diagnostics)
+    inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
+    inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+    inoremap <expr> <cr>    pumvisible() ? asyncomplete#close_popup() : "\<cr>"
 endfunction
 
 " git gutter settings

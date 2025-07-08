@@ -14,6 +14,24 @@ vim.opt.rtp:prepend(lazypath)
 
 -- install plugins
 require('lazy').setup({
+  {
+    "mason-org/mason-lspconfig.nvim",
+    opts = { automatic_enable = true },
+    dependencies = {
+      { "mason-org/mason.nvim", opts = {} },
+      "neovim/nvim-lspconfig",
+    },
+  },
+  'hrsh7th/cmp-nvim-lsp',
+  'hrsh7th/cmp-buffer',
+  'hrsh7th/cmp-path',
+  'hrsh7th/cmp-cmdline',
+  'hrsh7th/nvim-cmp',
+  {
+    'nvim-lualine/lualine.nvim',
+    dependencies = { 'nvim-tree/nvim-web-devicons' }
+  },
+  'Shatur/neovim-ayu',
   --async make
   'tpope/vim-dispatch',
   --glsl syntax
@@ -36,22 +54,15 @@ require('lazy').setup({
   -- jupyter notebooks
   { 'GCBallesteros/jupytext.nvim', config = true, lazy = false },
 
-  -- fuzzy finder
+  -- fzf
   {
-    'nvim-telescope/telescope.nvim',
-    branch = '0.1.x',
-    dependencies = { 'nvim-lua/plenary.nvim' }
-  },
-  -- lsp
-  {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v3.x',
-    dependencies = {
-      'neovim/nvim-lspconfig',
-      'hrsh7th/cmp-nvim-lsp',
-      'hrsh7th/nvim-cmp',
-      'L3MON4D3/LuaSnip',
-    }
+    "ibhagwan/fzf-lua",
+    -- optional for icon support
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    -- or if using mini.icons/mini.nvim
+    -- dependencies = { "echasnovski/mini.icons" },
+    opts = { 'skim' }
+
   },
   -- icons
   'nvim-tree/nvim-web-devicons'
