@@ -9,19 +9,11 @@ vim.api.nvim_create_autocmd('LspAttach', {
     local client = vim.lsp.get_client_by_id(args.data.client_id)
     --local capabilities = require('blink.cmp').get_lsp_capabilities(config.cappabilties);
     if client:supports_method('textDocument/diagnostic') then
-      vim.keymap.set('n', 'gl', vim.diagnostic.open_float)
+      vim.api.nvim_set_keymap('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
     end
     if client:supports_method('textDocument/definition') then
       vim.api.nvim_buf_set_option(bufnr, "tagfunc", "v:lua.vim.lsp.tagfunc")
-      local def_result = vim.lsp.buf.definition()
-      -- If definition fails (e.g., no result), try type definition
-      if not def_result then
-        vim.keymap.set('n', 'gd', function()
-          vim.lsp.buf.definition()
-          vim.lsp.buf.type_definition()
-        end)
-        vim.keymap.set('n', 'gD', vim.lsp.buf.declaration)
-      end
+      vim.keymap.set('n', 'gD', vim.lsp.buf.declaration)
     end
 
     -- Check if the LSP server supports document_formatting
