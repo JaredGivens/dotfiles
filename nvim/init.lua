@@ -20,6 +20,7 @@ vim.opt.listchars = {
   trail = ".",
   tab = "> ",
 }
+vim.g.clipboard = 'osc52'
 vim.opt.termguicolors = true
 vim.keymap.set('n', '<C-j>', ':cnext<CR>', { desc = 'Next quickfix' })
 vim.keymap.set('n', '<C-k>', ':cprev<CR>', { desc = 'Previous quickfix' })
