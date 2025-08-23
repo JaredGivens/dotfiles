@@ -21,11 +21,27 @@ vim.opt.listchars = {
   tab = "> ",
 }
 vim.g.clipboard = 'osc52'
+if vim.env.TMUX ~= nil then
+  local copy = {'tmux', 'load-buffer', '-w', '-'}
+  local paste = {'zsh', '-c', 'tmux refresh-client -l && sleep 0.05 && tmux save-buffer -'}
+  vim.g.clipboard = {
+    name = 'tmux',
+    copy = {
+      ['+'] = copy,
+      ['*'] = copy,
+    },
+    paste = {
+      ['+'] = paste,
+      ['*'] = paste,
+    },
+    cache_enabled = 0,
+  }
+end
 vim.opt.termguicolors = true
 vim.keymap.set('n', '<C-j>', ':cnext<CR>', { desc = 'Next quickfix' })
 vim.keymap.set('n', '<C-k>', ':cprev<CR>', { desc = 'Previous quickfix' })
-vim.keymap.set('n', '<C-l>', ':bnext<CR>', { desc = 'Next buffer' })
-vim.keymap.set('n', '<C-h>', ':bprevious<CR>', { desc = 'Previous buffer' })
+vim.keymap.set('n', '<C-l>', ':BufSurfForward<CR>', { desc = 'Next buffer' })
+vim.keymap.set('n', '<C-h>', ':BufSurfBack<CR>', { desc = 'Previous buffer' })
 require('plugins')
 vim.cmd('colorscheme ayu')
 

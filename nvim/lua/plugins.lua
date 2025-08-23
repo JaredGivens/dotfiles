@@ -14,6 +14,7 @@ vim.opt.rtp:prepend(lazypath)
 
 -- install plugins
 require("lazy").setup({
+  "ton/vim-bufsurf",
   {
     "prichrd/netrw.nvim",
     config = function()
