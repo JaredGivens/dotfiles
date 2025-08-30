@@ -7,3 +7,9 @@
 [submodule "tmux/tpm"]
 	path = tmux/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule "tmux/tmux-resurrect"]
+	path = tmux/tmux-resurrect
+	url = https://github.com/tmux-plugins/tmux-resurrect.git
+[submodule "tmux/tmux-continuum"]
+	path = tmux/tmux-continuum
+	url = https://github.com/tmux-plugins/tmux-continuum.git

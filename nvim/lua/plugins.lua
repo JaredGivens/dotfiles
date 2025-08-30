@@ -84,6 +84,7 @@ require("lazy").setup({
   "Shatur/neovim-ayu",
   --async make
   "tpope/vim-dispatch",
+  "tpope/vim-obsession",
   --glsl syntax
   "tikhomirov/vim-glsl",
   "nvim-treesitter/nvim-treesitter",
