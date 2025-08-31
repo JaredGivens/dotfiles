@@ -1,20 +1,18 @@
 # enable colors 
 autoload -U colors && colors
-
 # ls colors
-export CLICOLOR=1
-export LS_COLORS='di=01;34:ex=01;32:ln=01;36:*.tar=01;31'
+CLICOLOR=1
+LS_COLORS='di=01;34:ex=01;32:ln=01;36:*.tar=01;31'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-
-
 # set History
+HISTFILESIZE=100000
 HISTSIZE=10000
 SAVEHIST=10000
 HISTFILE=~/.cache/zsh/history
-
+HISTCONTROL=ignoredups
+setopt histignorealldups sharehistory incappendhistory
 setopt autocd nomatch menucomplete interactive_comments
 zle_highlight=('paste:none')
-
 # basic auto complete
 autoload -Uz compinit
 zstyle ':completion:*' menu select
@@ -24,11 +22,10 @@ compinit
 _comp_options+=(globdots)
 
 # vim mode
+KEYTIMEOUT=1
 bindkey -v
-export KEYTIMEOUT=1
 
 # prompt
-alias ls='ls --color=auto'
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' unstagedstr '%F{red}*%f'
@@ -38,44 +35,7 @@ zstyle ':vcs_info:git*' actionformats '%F{green}󰘬 %b%f(%F{yellow}%a%f)%c%u '
 precmd() { vcs_info }
 setopt PROMPT_SUBST
 PROMPT='%B%F{blue}%1~%f ${vcs_info_msg_0_}$ %b'
-
 # plugins
 source "$ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
-
-export EDITOR=nvim
-export CMAKE_GENERATOR=Ninja
-alias cmake='cmake -DCMAKE_EXPORT_COMPILE_COMMANDS=ON'
-
-
-export PATH="$PATH:$HOME/.local/bin"
-export PATH="$PATH:/Library/Frameworks/Python.framework/Versions/3.9/bin"
-export PATH="$PATH:/.cargo/bin"
-export PATH="$PATH:/usr/local/include"
-export PATH="$PATH:/Library/lein"
-export PATH="$PATH:$HOME/.cargo/bin"
-export PATH="$PATH:$HOME/.luarocks/bin"
-export PATH="$PATH:/System/Cryptexes/App/usr/bin"
-export PATH="$PATH:/usr/local/share/dotnet"
-export PATH="$PATH:$HOME/.dotnet/tools"
-export PATH="$PATH:/Library/Frameworks/Mono.framework/Versions/Current/Commands"
-export PATH="$PATH:$HOME/.cargo/bin"
-export PATH="$PATH:$HOME/.pyenv/bin"
-
-export LUA_PATH='/usr/local/Cellar/luarocks/3.9.2/share/lua/5.4/?.lua;/usr/local/share/lua/5.4/?.lua;/usr/local/share/lua/5.4/?/init.lua;/usr/local/lib/lua/5.4/?.lua;/usr/local/lib/lua/5.4/?/init.lua;./?.lua;./?/init.lua;/Users/jaredgivens/.luarocks/share/lua/5.4/?.lua;/Users/jaredgivens/.luarocks/share/lua/5.4/?/init.lua'
-export LUA_CPATH='/usr/local/lib/lua/5.4/?.so;/usr/local/lib/lua/5.4/loadall.so;./?.so;/Users/jaredgivens/.luarocks/lib/lua/5.4/?.so'
-export LUA_CPATH="$LUACPATH;$HOME/.luarocks/share/lua/5.1/"
-export OMNISHARP_DIR="$HOME/.local/lib/omnisharp"
-export DYLD_LIBRARY_PATH="$DYLD_LIBRARY_PATH:/usr/local/Cellar/imagemagick/7.1.1-39/lib"
-
-export CMAKE_PREFIX_PATH="/Users/jaredgivens/Library/cmake:$CMAKE_PREFIX_PATH"
-export PROTOC="/usr/local/bin/protoc"
-export PROTOC_INCLUDE="/usr/local/include"
-
-
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
-
-export SKIM_DEFAULT_COMMAND="fd --type f || git ls-tree -r --name-only HEAD || rg --files || find ."
-export SKIM_DEFAULT_OPTIONS="--color=16 --bind 'ctrl-a:select-all+accept'"
 
