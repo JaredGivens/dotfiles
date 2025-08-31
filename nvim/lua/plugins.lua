@@ -78,13 +78,32 @@ require("lazy").setup({
     config = function()
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
       vim.lsp.config("*", { capabilities = capabilities })
-    end
+    end,
   },
   "bluz71/nvim-linefly",
   "Shatur/neovim-ayu",
   --async make
   "tpope/vim-dispatch",
-  "tpope/vim-obsession",
+  {
+    "rmagatti/auto-session",
+    lazy = false,
+    keys = {
+      { "<leader>fs", "<cmd>AutoSession search<CR>", desc = "Session search" },
+    },
+    opts = {
+      suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
+      -- log_level = 'debug',
+    },
+    session_lens = {
+      picker = "fzf",
+      mappings = {
+        -- Mode can be a string or a table, e.g. {"i", "n"} for both insert and normal mode
+        delete_session = { "i", "<C-d>" },
+        alternate_session = { "i", "<C-s>" },
+        copy_session = { "i", "<C-y>" },
+      },
+    },
+  },
   --glsl syntax
   "tikhomirov/vim-glsl",
   "nvim-treesitter/nvim-treesitter",

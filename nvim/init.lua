@@ -20,6 +20,7 @@ vim.opt.listchars = {
   trail = ".",
   tab = "> ",
 }
+vim.opt.sessionoptions = "buffers,curdir,tabpages,winsize,winpos,terminal,options"
 vim.g.clipboard = 'osc52'
 if vim.env.TMUX ~= nil then
   local copy = {'tmux', 'load-buffer', '-w', '-'}
@@ -42,6 +43,7 @@ vim.keymap.set('n', '<C-j>', ':cnext<CR>', { desc = 'Next quickfix' })
 vim.keymap.set('n', '<C-k>', ':cprev<CR>', { desc = 'Previous quickfix' })
 vim.keymap.set('n', '<C-l>', ':BufSurfForward<CR>', { desc = 'Next buffer' })
 vim.keymap.set('n', '<C-h>', ':BufSurfBack<CR>', { desc = 'Previous buffer' })
+vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', {silent=true})
 require('plugins')
 vim.cmd('colorscheme ayu')
 
@@ -62,4 +64,3 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end)
   end,
 })
-vim.cmd([[Obsess]])
