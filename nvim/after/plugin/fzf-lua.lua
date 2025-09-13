@@ -29,10 +29,10 @@ fzf.setup({
   fzf_bin = 'sk',
   winopts = {
     -- Position the floating window on the right side
-    height = 0.20,  -- Window height (85% of screen)
-    width = 0.90,   -- Narrow width for a column (40% of screen)
-    row = 0.95,     -- Near the top (5% from top)
-    col = 0.5,     -- Far right (95% from left, aligns right edge)
+    height = 0.30,  -- Window height 
+    width = 0.90,   -- Narrow width for a column 
+    row = 0.05,     -- Near the top 
+    col = 0.5,     -- Far right 
     backdrop = 100, -- Keep backdrop opacity
 
     -- Preview configuration
