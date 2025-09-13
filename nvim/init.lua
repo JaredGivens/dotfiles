@@ -20,7 +20,7 @@ vim.opt.listchars = {
   trail = ".",
   tab = "> ",
 }
-vim.opt.sessionoptions = "buffers,curdir,tabpages,winsize,winpos,terminal,options"
+vim.opt.sessionoptions = "buffers,curdir,tabpages,winsize,winpos,terminal,localoptions"
 vim.g.clipboard = 'osc52'
 if vim.env.TMUX ~= nil then
   local copy = {'tmux', 'load-buffer', '-w', '-'}
