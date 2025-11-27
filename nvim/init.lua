@@ -41,12 +41,8 @@ end
 vim.opt.termguicolors = true
 vim.keymap.set('n', '<C-j>', ':cnext<CR>', { desc = 'Next quickfix' })
 vim.keymap.set('n', '<C-k>', ':cprev<CR>', { desc = 'Previous quickfix' })
-vim.keymap.set('n', '<C-l>', ':BufSurfForward<CR>', { desc = 'Next buffer' })
-vim.keymap.set('n', '<C-h>', ':BufSurfBack<CR>', { desc = 'Previous buffer' })
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', {silent=true})
-require('plugins')
-vim.cmd('colorscheme ayu')
-
+require("plugins")
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('my.lsp', {}),
   callback = function(args)
@@ -55,12 +51,17 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.api.nvim_set_keymap('n', 'gl', '<cmd>lua vim.diagnostic.open_float()<CR>', { noremap = true, silent = true })
     vim.api.nvim_buf_set_option(args.buf, "tagfunc", "v:lua.vim.lsp.tagfunc")
     vim.keymap.set('n', 'gD', vim.lsp.buf.declaration)
-
-
     -- Check if the LSP server supports document_formatting
     vim.api.nvim_buf_set_option(args.buf, "formatexpr", "v:lua.vim.lsp.formatexpr()")
     vim.keymap.set('n', 'gF', function()
       vim.lsp.buf.format({ bufnr = args.buf, id = client.id, timeout_ms = 1000 })
     end)
   end,
+})
+
+vim.lsp.config('csharp_ls', { 
+    cmd = { 'dotnet', 'tool', 'run', 'csharp-ls' },
+})
+vim.lsp.config('clangd', { 
+    cmd = { 'clangd' },
 })

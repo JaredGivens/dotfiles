@@ -49,4 +49,3 @@ export PROTOC_INCLUDE="/usr/local/include"
 
 export SKIM_DEFAULT_COMMAND="fd --type f || git ls-tree -r --name-only HEAD || rg --files || find ."
 export SKIM_DEFAULT_OPTIONS="--color=16 --bind 'ctrl-a:select-all+accept'"
-tmux

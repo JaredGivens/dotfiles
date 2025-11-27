@@ -21,10 +21,6 @@ zmodload zsh/complist
 compinit
 _comp_options+=(globdots)
 
-# vim mode
-KEYTIMEOUT=1
-bindkey -v
-
 # prompt
 autoload -Uz vcs_info
 zstyle ':vcs_info:*' check-for-changes true
@@ -39,3 +35,4 @@ PROMPT='%B%F{blue}%1~%f ${vcs_info_msg_0_}$ %b'
 source "$ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
 
+tmux

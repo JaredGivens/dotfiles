@@ -14,11 +14,57 @@ vim.opt.rtp:prepend(lazypath)
 
 -- install plugins
 require("lazy").setup({
-  "ton/vim-bufsurf",
+  {
+    "rcarriga/nvim-notify",
+    config = function()
+      local notify = require("notify")
+      -- configure some basic settings
+      notify.setup({
+        stages = "fade_in_slide_out",  -- animation style
+        timeout = 3000,                -- 3 seconds
+        max_height = 10,
+        max_width = 80,
+        background_colour = "#000000",
+      })
+      -- override vim.notify
+      vim.notify = notify
+    end,
+  },
+  {
+    "sphamba/smear-cursor.nvim",
+    opts = {                                -- Default  Range
+      cursor_color = "#f19618",
+      time_interval = 7,                    -- 17
+      stiffness = 0.8,                      -- 0.6      [0, 1]
+      trailing_stiffness = 0.6,             -- 0.45     [0, 1]
+      stiffness_insert_mode = 0.7,          -- 0.5      [0, 1]
+      trailing_stiffness_insert_mode = 0.7, -- 0.5      [0, 1]
+      damping = 0.95,                       -- 0.85     [0, 1]
+      damping_insert_mode = 0.95,           -- 0.9      [0, 1]
+      distance_stop_animating = 0.5,        -- 0.1      > 0
+    },
+  },
+  "stevearc/overseer.nvim",
+  { 
+    "mfussenegger/nvim-dap",
+    dependencies = { 
+      "igorlfs/nvim-dap-view",
+      "nvim-neotest/nvim-nio",
+      'theHamsta/nvim-dap-virtual-text' 
+    },
+  },
+  "numToStr/Comment.nvim",
+  {
+    "ton/vim-bufsurf",
+    config = function() 
+      vim.keymap.set('n', '<C-l>', ':BufSurfForward<CR>', { desc = 'Next buffer' })
+      vim.keymap.set('n', '<C-h>', ':BufSurfBack<CR>', { desc = 'Previous buffer' })
+    end,
+  },
   {
     "prichrd/netrw.nvim",
     config = function()
-      require("netrw").setup({})
+      require("netrw").setup {}
     end,
   },
   {
@@ -41,49 +87,30 @@ require("lazy").setup({
     },
   },
   {
-    "hrsh7th/nvim-cmp",
-    dependencies = {
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-cmdline",
-      "L3MON4D3/LuaSnip",
-      "saadparwaiz1/cmp_luasnip",
-      "neovim/nvim-lspconfig",
+    'saghen/blink.cmp',
+    dependencies = { 'rafamadriz/friendly-snippets' },
+    version = '1.*',
+    opts = {
+      keymap = { preset = 'default' },
+
+      appearance = {
+        nerd_font_variant = 'mono'
+      },
+      completion = { documentation = { auto_show = false } },
+      sources = {
+        default = { 'lsp', 'path', 'snippets', 'buffer' },
+      },
+      fuzzy = { implementation = "prefer_rust_with_warning" }
     },
-    config = function()
-      local cmp = require("cmp")
-      cmp.setup({
-        sources = {
-          { name = "nvim_lsp" },
-          { name = "buffer" },
-          { name = "path" },
-        },
-        mapping = require("cmp").mapping.preset.insert(),
-        snippet = {
-          expand = function(args)
-            require("luasnip").lsp_expand(args.body)
-          end,
-        },
-        sources = cmp.config.sources({
-          { name = "nvim_lsp" },
-          { name = "luasnip" }, -- For luasnip users.
-        }, {
-          { name = "buffer" },
-        })
-      })
-    end,
-  },
-  {
-    "hrsh7th/cmp-nvim-lsp",
-    config = function()
-      local capabilities = require("cmp_nvim_lsp").default_capabilities()
-      vim.lsp.config("*", { capabilities = capabilities })
-    end,
+    opts_extend = { "sources.default" }
   },
   "bluz71/nvim-linefly",
-  "Shatur/neovim-ayu",
-  --async make
-  "tpope/vim-dispatch",
+  {
+    "Shatur/neovim-ayu",
+    config = function() 
+      vim.cmd('colorscheme ayu')
+    end,
+  },
   {
     "rmagatti/auto-session",
     lazy = false,
