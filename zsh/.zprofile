@@ -9,14 +9,6 @@ if command -v ninja &> /dev/null; then
 fi
 export PAGER="less -R"
 export PATH="$PATH:$HOME/.local/bin:/usr/local/include"
-export PATH="$PATH:/usr/local/share/dotnet:$HOME/.dotnet/tools"
-if [[ ! -d "$HOME/.cargo" ]]; then
-    curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-    export PATH="$PATH:$HOME/.cargo/bin"  # ensure cargo is in the path right after install
-    cargo install bat just tldr fd-find ripgrep skim uv ninja-build
-else
-    export PATH="$PATH:$HOME/.cargo/bin"  # ensure cargo is in the path right after install
-fi
 
 case "$(uname -s)" in
   Linux*);;

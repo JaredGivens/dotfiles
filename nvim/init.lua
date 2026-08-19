@@ -8,13 +8,8 @@ vim.opt.expandtab = true
 vim.opt.smartindent = true
 vim.opt.swapfile = false
 vim.opt.backup = false
-vim.opt.hlsearch = false
 vim.opt.incsearch = true
 vim.opt.wrap = false
-vim.opt.scrolloff = 4
-vim.opt.colorcolumn = '80'
-vim.opt.list = true
-vim.opt.hlsearch = true
 vim.opt.listchars = {
   space = ".",
   trail = ".",
@@ -42,6 +37,7 @@ vim.opt.termguicolors = true
 vim.keymap.set('n', '<C-j>', ':cnext<CR>', { desc = 'Next quickfix' })
 vim.keymap.set('n', '<C-k>', ':cprev<CR>', { desc = 'Previous quickfix' })
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', {silent=true})
+vim.keymap.set('i', 'jj', '<Esc>', { desc = 'Escape to normal mode' })
 require("plugins")
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('my.lsp', {}),
