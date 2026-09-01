@@ -34,5 +34,3 @@ PROMPT='%B%F{blue}%1~%f ${vcs_info_msg_0_}$ %b'
 # plugins
 source "$ZDOTDIR/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 source "$ZDOTDIR/zsh-autosuggestions/zsh-autosuggestions.zsh"
-
-tmux
